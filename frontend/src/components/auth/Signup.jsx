@@ -89,13 +89,13 @@ const Signup = () => {
             type="submit"
             className="w-full py-2 px-4 bg-green-600 hover:bg-green-700 text-white rounded-md font-medium transition-colors" onClick={handleSignup}
           >
-            Sign Up
+            {loading?"Signing up...":"Sign Up"}
           </button>
         </form>
       </div>
       <div className="mt-6 p-4 bg-[#161b22] rounded-lg border border-[#30363d] text-center w-full max-w-[340px]">
         <span className="text-[#7d8590]">Already have an account? </span>
-        <a href="/login" className="text-blue-500 hover:text-blue-400">Login</a>
+        <a href="/auth" className="text-blue-500 hover:text-blue-400">Login</a>
       </div>
     </div>
   )
