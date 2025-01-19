@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { UserPlus, LogOut } from 'lucide-react';
-import { useAuth } from "../../authContext";
+import {LogOut } from 'lucide-react';
+import { useAuth } from "../../AuthContext";
 const ProfileHeader = () => {
   const { setCurrentUser } = useAuth();
   const [userDetails, setUserDetails] = useState({ username: "hello" });

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from "axios";
 import { Github } from 'lucide-react';
 import "./auth.css"
-import { useAuth } from '../../authContext';
+import { useAuth } from '../../AuthContext';
 const Signup = () => {
   const [loading,setLoading]=useState(false);
   const {setCurrentUser}=useAuth();

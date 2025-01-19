@@ -7,7 +7,7 @@ import Login from "./components/auth/Login"
 import NewRepo from "./components/UI/NewRepo/NewRepo";
 import RepositoryList from "./components/UI/AllRepoPage/RepositoryList"
 import StarredRepo from "./components/UI/StarredeRepo/StarredRepo";
-import { useAuth } from "./authContext";
+import { useAuth } from "./AuthContext";
 import Repository from "./components/UI/RepoPage/Repository";
 import IssuesUI from "./components/issue/IssuePage";
 import IssueForm from "./components/issue/IssueForm";

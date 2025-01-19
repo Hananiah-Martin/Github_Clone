@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useAuth } from "../../authContext";
+import { useAuth } from "../../AuthContext";
 import { Github } from "lucide-react";
 import "./auth.css";
 import { ToastContainer, toast } from "react-toastify";
