@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import {useNavigate,useRoutes,useLocation} from 'react-router-dom'
 import Dashboard from "./components/dashboard/Dashboard"
 import Signup from "./components/auth/Signup"
-import Profile from "./components/user/Profile"
 import Login from "./components/auth/Login"
 import NewRepo from "./components/UI/NewRepo/NewRepo";
 import RepositoryList from "./components/UI/AllRepoPage/RepositoryList"
