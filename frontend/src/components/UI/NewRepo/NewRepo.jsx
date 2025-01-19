@@ -17,7 +17,7 @@ const NewRepo = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/userProfile/${userId}`);
+        const response = await axios.get(`https://github-clone-si5u.onrender.com/userProfile/${userId}`);
         setUsername(response.data.username);
       } catch (error) {
         toast.error("Error fetching user profile");
@@ -40,7 +40,7 @@ const NewRepo = () => {
 
     try {
       setLoading(true);
-      await axios.post("http://localhost:3000/repo/create", {
+      await axios.post("https://github-clone-si5u.onrender.com/repo/create", {
         name,
         description,
         content: [],

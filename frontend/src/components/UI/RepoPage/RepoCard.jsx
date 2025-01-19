@@ -9,7 +9,7 @@ function RepoCard({details}) {
     if(details.isStarrred===false){
       try {
         const userId=localStorage.getItem("userId");
-        const response=await axios.put("http://localhost:3000/repo/star",{
+        const response=await axios.put("https://github-clone-si5u.onrender.com/repo/star",{
           repoId:id,
           userId:userId,
         })
@@ -21,7 +21,7 @@ function RepoCard({details}) {
     else{
       try {
         const userId=localStorage.getItem("userId");
-        const response=await axios.put("http://localhost:3000/repo/unStar",{
+        const response=await axios.put("https://github-clone-si5u.onrender.com/repo/unStar",{
           repoId:id,
           userId:userId,
         })

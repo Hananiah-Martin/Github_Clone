@@ -24,7 +24,7 @@ const ProfileHeader = () => {
       if (userId) {
         try {
           const response = await axios.get(
-            `http://localhost:3000/userProfile/${userId}`
+            `https://github-clone-si5u.onrender.com/userProfile/${userId}`
           );
           setUserDetails(response.data);
         } catch (err) {
@@ -53,7 +53,7 @@ const ProfileHeader = () => {
     const userId = localStorage.getItem("userId");
     try {
       const response = await axios.put(
-        `http://localhost:3000/updateProfile/${userId}`,
+        `https://github-clone-si5u.onrender.com/updateProfile/${userId}`,
         {
           username: formData.username,
           description: formData.description,

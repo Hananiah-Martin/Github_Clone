@@ -18,7 +18,7 @@ const Login = () => {
     try {
       setLoading(true);
       console.log(formData.email + " " + formData.password);
-      const res = await axios.post("http://localhost:3000/login", {
+      const res = await axios.post("https://github-clone-si5u.onrender.com/login", {
         email: formData.email,
         password: formData.password,
       });
@@ -102,7 +102,7 @@ const Login = () => {
       </div>
       <div className="mt-6 p-4 bg-[#161b22] rounded-lg border border-[#30363d] text-center w-full max-w-[340px]">
         <span className="text-[#7d8590]">New to GitHub? </span>
-        <a href="http://localhost:5173/signup" className="text-blue-500 hover:text-blue-400">
+        <a href="https://github-clone-si5u.onrender.com/signup" className="text-blue-500 hover:text-blue-400">
           Create an account
         </a>
       </div>

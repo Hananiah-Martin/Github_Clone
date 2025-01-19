@@ -8,7 +8,7 @@ function ReadmeView({ details }) {
   const {id}=useParams();
  useEffect(() => {
      const fetchDetails = async () => {
-       const response = await fetch(`http://localhost:3000/repo/${id}`);
+       const response = await fetch(`https://github-clone-si5u.onrender.com/repo/${id}`);
        const data = await response.json();
        setContent(data[0]?.readMe);
      }
@@ -22,7 +22,7 @@ function ReadmeView({ details }) {
   const handleSave = async(e) => {
     e.preventDefault();
     try{
-        const response=await axios.put('http://localhost:3000/repo/updateReadme',{
+        const response=await axios.put('https://github-clone-si5u.onrender.com/repo/updateReadme',{
             repoId:id,
             readMe:content,
         });

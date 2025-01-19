@@ -9,7 +9,7 @@ const RepositoryGrid = () => {
     const fetchRepositories = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/repo/user/${userId}`
+          `https://github-clone-si5u.onrender.com/repo/user/${userId}`
         );
         const data = await response.json();
         setRepositories(data.repository);
@@ -44,7 +44,7 @@ const RepositoryGrid = () => {
                   started!
                 </p>
                 <a
-                  href="http://localhost:5173/new"
+                  href="https://github-clone-si5u.onrender.com/new"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-md font-medium transition-colors"
                 >
                   <Plus size={20} />
@@ -73,7 +73,7 @@ const RepositoryGrid = () => {
                 <div className="flex items-center gap-3">
                   <h3 className="text-xl">
                     <a
-                      href={`http://localhost:5173/repo/${repo._id}`}
+                      href={`https://github-clone-si5u.onrender.com/repo/${repo._id}`}
                       className="text-blue-400 hover:text-blue-300 font-bold 
                         transition-colors duration-200 hover:underline"
                     >

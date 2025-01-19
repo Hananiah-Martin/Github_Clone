@@ -13,7 +13,7 @@ const Dashboard = () => {
     const fetchUserDetails=async()=>{
       try {
         const response = await fetch(
-          `http://localhost:3000/userProfile/${userId}`
+          `https://github-clone-si5u.onrender.com/userProfile/${userId}`
         );
         const data = await response.json();
         setUserDetails(data);
@@ -24,7 +24,7 @@ const Dashboard = () => {
     const fetchRepositories = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/repo/user/${userId}`
+          `https://github-clone-si5u.onrender.com/repo/user/${userId}`
         );
         const data = await response.json();
         setRepositories(data.repository); // Update user's repositories
@@ -35,7 +35,7 @@ const Dashboard = () => {
 
     const fetchSuggestedRepositories = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/repo/all`);
+        const response = await fetch(`https://github-clone-si5u.onrender.com/repo/all`);
         const data = await response.json();
         setSuggestedRepositories(data);
       } catch (err) {

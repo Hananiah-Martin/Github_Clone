@@ -24,7 +24,7 @@ function RepoSidebar({ details }) {
     e.preventDefault();
     try {
       console.log(description);
-      const response=await axios.put(`http://localhost:3000/repo/update/${id}`,{
+      const response=await axios.put(`https://github-clone-si5u.onrender.com/repo/update/${id}`,{
         name:formData.name,
         description:formData.description,
         visibility:formData.visibility,
@@ -40,7 +40,7 @@ function RepoSidebar({ details }) {
   const handleDelete=async(e)=>{
     e.preventDefault();
     try {
-      const response=await axios.delete(`http://localhost:3000/repo/delete/${id}`);
+      const response=await axios.delete(`https://github-clone-si5u.onrender.com/repo/delete/${id}`);
       navigate("/");
       console.log(response);
     } catch (error) {

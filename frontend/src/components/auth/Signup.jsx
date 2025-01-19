@@ -15,7 +15,7 @@ const Signup = () => {
       e.preventDefault();
       try{
         setLoading(true);
-        const res=await axios.post("http://localhost:3000/signup",{
+        const res=await axios.post("https://github-clone-si5u.onrender.com/signup",{
           email:formData.email,
           password:formData.password,
           username:formData.username  
@@ -95,7 +95,7 @@ const Signup = () => {
       </div>
       <div className="mt-6 p-4 bg-[#161b22] rounded-lg border border-[#30363d] text-center w-full max-w-[340px]">
         <span className="text-[#7d8590]">Already have an account? </span>
-        <a href="http://localhost:5173/login" className="text-blue-500 hover:text-blue-400">Login</a>
+        <a href="https://github-clone-si5u.onrender.com/login" className="text-blue-500 hover:text-blue-400">Login</a>
       </div>
     </div>
   )

@@ -11,7 +11,7 @@ function RepositoryCard({ repo }) {
               <div className="flex items-center gap-3">
                 <h3 className="text-xl">
                   <a
-                    href={`http://localhost:5173/repo/${repo._id}`}
+                    href={`https://github-clone-si5u.onrender.com/repo/${repo._id}`}
                     className="text-blue-400 hover:text-blue-300 font-bold transition-colors duration-200 hover:underline"
                   >
                     {repo.name}

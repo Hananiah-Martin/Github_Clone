@@ -10,7 +10,7 @@ const StarredRepo = () => {
     const fetchRepositories = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/userProfile/${userId}`
+          `https://github-clone-si5u.onrender.com/userProfile/${userId}`
         );
         const data = await response.json();
         setRepositories(data.repositories); // Update user's repositories

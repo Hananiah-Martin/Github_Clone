@@ -10,7 +10,7 @@ function Repository() {
   const [details,setDetails]=useState([]);
   useEffect(() => {
     const fetchDetails = async () => {
-      const response = await fetch(`http://localhost:3000/repo/${id}`);
+      const response = await fetch(`https://github-clone-si5u.onrender.com/repo/${id}`);
       const data = await response.json();
       setDetails(data[0]);
     }
@@ -22,13 +22,13 @@ function Repository() {
     <div className="min-h-screen text-gray-300">
       <nav className="flex items-center border-b border-gray-700 overflow-x-auto">
         <a
-          href={`http://localhost:5173/repo/${id}`}
+          href={`https://github-clone-si5u.onrender.com/repo/${id}`}
           className="px-4 py-2 border-b-2 border-orange-500 text-gray-200 whitespace-nowrap"
         >
           Code
         </a>
         <a 
-          href={`http://localhost:5173/repo/${id}/issues`} 
+          href={`https://github-clone-si5u.onrender.com/repo/${id}/issues`} 
           className="px-4 py-2 text-gray-400 hover:text-gray-200 whitespace-nowrap"
         >
           Issues

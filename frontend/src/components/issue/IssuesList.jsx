@@ -18,7 +18,7 @@ function IssuesList({issues}) {
     e.preventDefault();
     try{
       console.log(id);
-        const response=await axios.put('http://localhost:3000/issue/update',{
+        const response=await axios.put('https://github-clone-si5u.onrender.com/issue/update',{
             title:formData.title,
             description:formData.description,
         });
@@ -32,7 +32,7 @@ function IssuesList({issues}) {
     e.preventDefault();
     try{
         const response = await axios.delete(
-            `http://localhost:3000/issue/delete?title=${formData.title}`
+            `https://github-clone-si5u.onrender.com/issue/delete?title=${formData.title}`
           );
     }catch(err){
         console.error("Error in deleting the issue",err);

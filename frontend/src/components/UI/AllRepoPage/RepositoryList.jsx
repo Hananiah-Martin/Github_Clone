@@ -20,7 +20,7 @@ function RepositoryList() {
     const fetchRepositories = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/repo/user/${userId}`
+          `https://github-clone-si5u.onrender.com/repo/user/${userId}`
         );
         const data = await response.json();
         setRepositories(data.repository); // Update user's repositories

@@ -18,7 +18,7 @@ const IssuesUI = () => {
   useEffect(() => {
       const fetchIssues = async () => {
         try {
-          const response = await fetch(`http://localhost:3000/repo/${id}`);
+          const response = await fetch(`https://github-clone-si5u.onrender.com/repo/${id}`);
           const data = await response.json();
           setIssues(data[0].issues);
         } catch (error) {
@@ -46,13 +46,13 @@ const IssuesUI = () => {
       <Navbar />
       <nav className="flex items-center border-b border-gray-700 md-5 py-2">
           <a
-            href={`http://localhost:5173/repo/${id}`}
+            href={`https://github-clone-si5u.onrender.com/repo/${id}`}
             className="px-4 py-2 text-gray-200"
           >
             Code
           </a>
           <a
-            href={`http://localhost:5173/repo/${id}/issues`}
+            href={`https://github-clone-si5u.onrender.com/repo/${id}/issues`}
             className="px-4 py-2 text-gray-400 border-b-2 border-orange-500 hover:text-gray-200"
           >
             Issues
