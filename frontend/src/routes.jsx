@@ -53,7 +53,7 @@ const ProjectRoutes=()=>{
             element:<Repository/>
         },
         {
-            path:"starredRepo",
+            path:"/starredRepo",
             element:<StarredRepo/>
         },
         {

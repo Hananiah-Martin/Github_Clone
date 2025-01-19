@@ -20,8 +20,8 @@ const Navbar = () => {
   }
   const menuItems = [
     { name: 'Overview', href: '/' },
-    { name: 'Repositories', href: '/allRepo' },
-    { name: 'Stars', href: '/starredRepo' },
+    { name: 'Repositories', href: 'https://github-clone-xita-hananiahs-projects.vercel.app/allRepo' },
+    { name: 'Stars', href: 'https://github-clone-xita-hananiahs-projects.vercel.app/starredRepo' },
     { name: 'Explore', href: '/' },
   ];
 

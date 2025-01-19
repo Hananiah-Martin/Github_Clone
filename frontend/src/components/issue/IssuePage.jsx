@@ -46,13 +46,13 @@ const IssuesUI = () => {
       <Navbar />
       <nav className="flex items-center border-b border-gray-700 md-5 py-2">
           <a
-            href={`https://github-clone-si5u.onrender.com/repo/${id}`}
+            href={`https://github-clone-xita-hananiahs-projects.vercel.app/repo/${id}`}
             className="px-4 py-2 text-gray-200"
           >
             Code
           </a>
           <a
-            href={`https://github-clone-si5u.onrender.com/repo/${id}/issues`}
+            href={`https://github-clone-xita-hananiahs-projects.vercel.app//repo/${id}/issues`}
             className="px-4 py-2 text-gray-400 border-b-2 border-orange-500 hover:text-gray-200"
           >
             Issues

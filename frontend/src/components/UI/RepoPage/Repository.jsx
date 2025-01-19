@@ -22,13 +22,13 @@ function Repository() {
     <div className="min-h-screen text-gray-300">
       <nav className="flex items-center border-b border-gray-700 overflow-x-auto">
         <a
-          href={`https://github-clone-si5u.onrender.com/repo/${id}`}
+          href={`https://github-clone-xita-hananiahs-projects.vercel.app/repo/${id}`}
           className="px-4 py-2 border-b-2 border-orange-500 text-gray-200 whitespace-nowrap"
         >
           Code
         </a>
         <a 
-          href={`https://github-clone-si5u.onrender.com/repo/${id}/issues`} 
+          href={`https://github-clone-xita-hananiahs-projects.vercel.app/repo/${id}/issues`} 
           className="px-4 py-2 text-gray-400 hover:text-gray-200 whitespace-nowrap"
         >
           Issues
