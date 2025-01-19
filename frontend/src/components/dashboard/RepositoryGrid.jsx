@@ -44,7 +44,7 @@ const RepositoryGrid = () => {
                   started!
                 </p>
                 <a
-                  href="https://github-clone-xita-hananiahs-projects.vercel.app/new"
+                  href="/new"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-md font-medium transition-colors"
                 >
                   <Plus size={20} />
@@ -73,7 +73,7 @@ const RepositoryGrid = () => {
                 <div className="flex items-center gap-3">
                   <h3 className="text-xl">
                     <a
-                      href={`https://github-clone-xita-hananiahs-projects.vercel.app/repo/${repo._id}`}
+                      href={`/repo/${repo._id}`}
                       className="text-blue-400 hover:text-blue-300 font-bold 
                         transition-colors duration-200 hover:underline"
                     >

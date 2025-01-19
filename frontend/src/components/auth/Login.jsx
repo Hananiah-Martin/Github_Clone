@@ -102,7 +102,7 @@ const Login = () => {
       </div>
       <div className="mt-6 p-4 bg-[#161b22] rounded-lg border border-[#30363d] text-center w-full max-w-[340px]">
         <span className="text-[#7d8590]">New to GitHub? </span>
-        <a href="https://github-clone-xita-hananiahs-projects.vercel.app/signup" className="text-blue-500 hover:text-blue-400">
+        <a href="/signup" className="text-blue-500 hover:text-blue-400">
           Create an account
         </a>
       </div>
