@@ -20,6 +20,7 @@ const Signup = () => {
           password:formData.password,
           username:formData.username  
         });
+        console.log("result"+res);
         localStorage.setItem("token",res.data.token);
         localStorage.setItem("userId",res.data.userId);
         setCurrentUser(res.data.userId);

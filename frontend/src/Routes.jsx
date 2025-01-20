@@ -10,6 +10,7 @@ import { useAuth } from "./AuthContext";
 import Repository from "./components/UI/RepoPage/Repository";
 import IssuesUI from "./components/issue/IssuePage";
 import IssueForm from "./components/issue/IssueForm";
+import ProfileHeader from "./components/dashboard/ProfileHeader";
 const ProjectRoutes=()=>{
     const {currentUser,setCurrentUser}=useAuth();
     const navigate=useNavigate();
@@ -67,6 +68,10 @@ const ProjectRoutes=()=>{
             path:"/:id/issues/new",
             element:<IssueForm/>
         },
+        {
+            path:"/profile",
+            element:<ProfileHeader/>
+        }
     ])
     return element;
 }

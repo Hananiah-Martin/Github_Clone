@@ -36,15 +36,6 @@ function Repository() {
       </nav>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
         <RepoCard details={details}/>
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 mt-4 sm:mt-6">
-          <div className="flex-1 min-w-0">
-            <RepoContent />
-            <ReadmeView details={details}/>
-          </div>
-          <div className="w-full lg:w-64">
-            <RepoSidebar details={details}/>
-          </div>
-        </div>
       </div>
     </div>
     </>

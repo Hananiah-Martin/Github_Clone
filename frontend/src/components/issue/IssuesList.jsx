@@ -5,9 +5,10 @@ import axios from "axios";
 function IssuesList({issues}) {
   const [id,setId] = useState(issues._id); 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [formData, setFormData] = useState({ title: "", description: "" });
+  const [formData, setFormData] = useState({ title: "", description: "",id:""});
+  const [loading,setLoading]=useState(false);
   const handleIssueClick = (issue) => {
-    setFormData({ title: issue.title, description:issue.description});
+    setFormData({ title: issue.title, description:issue.description,id:issue._id});
     setIsModalOpen(true);
   };
   const handleCloseModal = () => {
@@ -17,11 +18,13 @@ function IssuesList({issues}) {
   const handleUpdateIssue = async(e) => {
     e.preventDefault();
     try{
-      console.log(id);
+        setLoading(true);
         const response=await axios.put('https://github-clone-si5u.onrender.com/issue/update',{
+            id:formData.id,
             title:formData.title,
             description:formData.description,
         });
+        setLoading(false);
     }catch(err){
         console.error("Error in updating the issue",err);
     }
@@ -32,7 +35,7 @@ function IssuesList({issues}) {
     e.preventDefault();
     try{
         const response = await axios.delete(
-            `https://github-clone-si5u.onrender.com/issue/delete?title=${formData.title}`
+            `https://github-clone-si5u.onrender.com/issue/delete?id=${formData.id}`
           );
     }catch(err){
         console.error("Error in deleting the issue",err);
@@ -69,8 +72,11 @@ function IssuesList({issues}) {
                 {issue.title}
               </h3>
             </div>
-            <div className="text-sm text-gray-500 mt-1">
+            <div className="text-sm text-white-500 mt-1">
               {issue.description} 
+            </div>
+            <div className="text-gray-500 mt-1" style={{fontSize:"10px"}}>
+              #{issue._id} 
             </div>
           </div>
         </div>
@@ -110,6 +116,14 @@ function IssuesList({issues}) {
                 className="w-full h-32 px-3 py-2 bg-[#0d1117] border border-gray-700 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
+            <div className="mb-4">
+              <label className="block text-sm font-medium mb-2">Id</label>
+              <input
+                type="text"
+                value={formData.id}
+                className="w-full px-3 py-2 bg-[#0d1117] border border-gray-700 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
             
             <div className="flex justify-end space-x-3">
               <button
@@ -123,7 +137,7 @@ function IssuesList({issues}) {
                 type="submit"
                 className="px-4 py-2 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition-colors" onClick={handleUpdateIssue}
               >
-                Update Issue
+                {loading?"Updating":"Update Issue"}
               </button>
             </div>
           </form>

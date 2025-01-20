@@ -22,7 +22,7 @@ const Navbar = () => {
     { name: 'Overview', href: '/' },
     { name: 'Repositories', href: '/allRepo' },
     { name: 'Stars', href: '/starredRepo' },
-    { name: 'Explore', href: '/' },
+    { name: 'Profile', href: '/profile' },
   ];
 
   return (
@@ -106,14 +106,6 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <div className="px-3 py-2">
-              <input
-                type="text"
-                className="w-full bg-github-dark border border-github-border rounded-md py-1.5 pl-10 pr-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-github-hover"
-                placeholder="Search GitHub"
-              />
-              <MagnifyingGlassIcon className="absolute left-6 top-[4.5rem] transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-            </div>
             {menuItems.map((item) => (
               <a
                 key={item.name}
@@ -123,11 +115,6 @@ const Navbar = () => {
                 {item.name}
               </a>
             ))}
-            {!isAuthenticated && (
-              <button className="w-full bg-github-btn text-white px-3 py-2 rounded-md text-base font-medium hover:bg-opacity-90">
-                Log Out
-              </button>
-            )}
           </div>
         </div>
       )}

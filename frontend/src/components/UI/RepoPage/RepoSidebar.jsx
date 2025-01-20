@@ -5,13 +5,12 @@ import { BsX } from "react-icons/bs";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
+
 function RepoSidebar({ details }) {
   const {id}=useParams();
   const navigate=useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [name,setName]=useState("");
-  const [description,setDescription]=useState("");
-  const [visibility, setVisibility] = useState(true);
+  const [loading,setLoading]=useState(false);
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
@@ -23,14 +22,14 @@ function RepoSidebar({ details }) {
   const handleSubmit =async (e) => {
     e.preventDefault();
     try {
-      console.log(description);
+      setLoading(true);
       const response=await axios.put(`https://github-clone-si5u.onrender.com/repo/update/${id}`,{
         name:formData.name,
         description:formData.description,
         visibility:formData.visibility,
       });
+      setLoading(false);
       toast.success("Repository updated successfully!");
-      console.log(response);
     } catch (error) {
       console.error("Error updating repository:",error.response?.data||error.message);
     }
@@ -103,35 +102,6 @@ function RepoSidebar({ details }) {
       </div>
 
       <div>
-        <h2 className="text-lg font-semibold text-gray-200 mb-2">Languages</h2>
-        <div className="w-full h-2 rounded-full bg-gray-700 overflow-hidden mb-2">
-          <div className="h-full bg-blue-500" style={{ width: "86.5%" }}></div>
-          <div className="h-full bg-purple-500" style={{ width: "8.1%" }}></div>
-          <div className="h-full bg-yellow-500" style={{ width: "4.3%" }}></div>
-          <div className="h-full bg-red-500" style={{ width: "1.1%" }}></div>
-        </div>
-        <div className="text-sm space-y-1">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-            <span className="text-gray-300">TypeScript</span>
-            <span className="text-gray-500">86.5%</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-purple-500"></span>
-            <span className="text-gray-300">CSS</span>
-            <span className="text-gray-500">8.1%</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-yellow-500"></span>
-            <span className="text-gray-300">JavaScript</span>
-            <span className="text-gray-500">4.3%</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-red-500"></span>
-            <span className="text-gray-300">HTML</span>
-            <span className="text-gray-500">1.1%</span>
-          </div>
-        </div>
         <div style={{marginTop:"50px"}}>
           <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-red rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-red-700" onClick={handleDelete}>Delete Repo</button>
         </div>
@@ -196,7 +166,7 @@ function RepoSidebar({ details }) {
                   className="px-4 py-2 bg-green-600 text-white font-medium rounded-md hover:bg-green-700 transition-colors"
                    onClick={handleSubmit}
                 >
-                  Edit Repository
+                  {loading?"Updating...":"Edit Repo"}
                 </button>
               </div>
             </form>

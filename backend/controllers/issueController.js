@@ -22,11 +22,9 @@ async function createIssue(req,res){
     }
 }
 async function  updateIssueById(req,res){
-    const {title,description}=req.body;
-    const issues=await Issue.findOne({title:title});
-    const issueId=issues._id;
+    const {id,title,description}=req.body;
     try {
-        const issue=await Issue.findById(issueId);
+        const issue=await Issue.findById(id);
         issue.title=title;
         issue.description=description;
         await issue.save();
@@ -37,11 +35,9 @@ async function  updateIssueById(req,res){
     }
 }
 async function deleteIssueById(req,res){
-    const { title } = req.query;
-    const issues=await Issue.findOne({title:title});
-    const issueId=issues._id;
+    const { id } = req.query;
     try {
-        const issue=await Issue.findByIdAndDelete(issueId);
+        const issue=await Issue.findByIdAndDelete(id);
         res.json({message:"Repository deleted succesffuly",issue:issue});
     } catch (error) {
         console.error("Error during fetching : ",error.message);

@@ -5,8 +5,8 @@ function RepositoryCard({ repo }) {
   return (
     <>
       <div className="py-6">
-        <div className="min-h-screen bg-[#0d1117] p-8">
-          <div className="flex items-start justify-between p-6 bg-[#161b22] rounded-lg border border-gray-800 transition-all duration-200 hover:border-gray-700 hover:shadow-lg group max-w-4xl">
+        <div>
+          <div className="flex items-start justify-between p-6 bg-[#161b22] rounded-lg border border-gray-800 transition-all duration-200 hover:border-gray-700 hover:shadow-lg ">
             <div className="flex-1">
               <div className="flex items-center gap-3">
                 <h3 className="text-xl">

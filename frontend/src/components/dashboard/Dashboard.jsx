@@ -10,17 +10,6 @@ const Dashboard = () => {
   const [userDetails,setUserDetails]=useState([]);
   const userId = localStorage.getItem("userId");
   useEffect(() => {
-    const fetchUserDetails=async()=>{
-      try {
-        const response = await fetch(
-          `https://github-clone-si5u.onrender.com/userProfile/${userId}`
-        );
-        const data = await response.json();
-        setUserDetails(data);
-      } catch (err) {
-        console.error("Error while fetching user details: ", err);
-      }
-    }
     const fetchRepositories = async () => {
       try {
         const response = await fetch(
@@ -45,7 +34,6 @@ const Dashboard = () => {
 
     fetchRepositories();
     fetchSuggestedRepositories();
-    fetchUserDetails();
   }, []);
   useEffect(() => {
     if (searchQuery == "") {
@@ -64,7 +52,6 @@ const Dashboard = () => {
     <div>
       <Navbar/>
       <div style={{display:"flex",flexDirection:"row"}}>
-        <ProfileHeader />
         <RepositoryGrid/>
       </div>
     </div>

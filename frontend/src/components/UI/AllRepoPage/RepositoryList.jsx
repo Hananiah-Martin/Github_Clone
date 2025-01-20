@@ -29,7 +29,7 @@ function RepositoryList() {
       }
     };
     fetchRepositories();
-  }, []);
+  }, [repos]);
   useEffect(() => {
     if (searchQuery == "") {
       setSearchResults(repos);
@@ -37,7 +37,6 @@ function RepositoryList() {
       const filteredRepo = repos.filter((repo) =>
         repo.name.toLowerCase().includes(searchQuery.toLowerCase())
       );
-      console.log(filteredRepo+"hello");
       setSearchResults(filteredRepo);
     }
   }, [searchQuery, repos]);
