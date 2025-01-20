@@ -67,7 +67,8 @@ async function signup(req,res){
         }
         const result=await usersCollection.insertOne(newUser);
         const token=jwt.sign({id:result.insertId},process.env.JWT_SECRET_KEY,{expiresIn:"1h"});
-        res.json({token,userId:result.insertId});
+        console.log(result);
+        res.json({token,userId:result.insertedId});
     }catch(err){
         console.error("Error during singup : ",err.message);
         res.status(500).send("server error");
