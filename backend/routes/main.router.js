@@ -6,7 +6,7 @@ const issueRouter=require("./issue.router");
 mainRouter.use(userRouter);
 mainRouter.use(repoRouter);
 mainRouter.use(issueRouter);
-mainRouter.get("/",(req,res)=>{
+mainRouter.get("/users",(req,res)=>{
     res.send("Welcome");
 })
 module.exports=mainRouter;

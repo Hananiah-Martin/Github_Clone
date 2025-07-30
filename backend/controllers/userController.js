@@ -75,6 +75,7 @@ async function signup(req,res){
     }
 }
 async function login(req,res){
+    console.log("I am in login")
     const {email,password}=req.body;
     try{
         await connectClient();

@@ -13,6 +13,7 @@ const exp = require("constants");
 const {initRepo}=require("../backend/controllers/init.js")
 const {commitRepo}=require("../backend/controllers/commit.js")
 const {addRepo}=require("../backend/controllers/add.js");
+const userController=require("../backend/controllers/userController.js")
 yargs(hideBin(process.argv))
 .command(
     "start","Starts a new Server",{},startServer
@@ -46,7 +47,7 @@ yargs(hideBin(process.argv))
 .help().argv;
 function startServer(){
     const app=express();
-    const port=3000;
+    const port=process.env.PORT||3000;
     app.use(bodyParser.json());
     app.use(express.json());
     const mongoUrl=process.env.MONGO_URL;
